@@ -95,10 +95,10 @@ def services(service):
     if service!=None:
         pass
     else:
+        scope = ['https://www.googleapis.com/auth/drive']
         if os.path.exists('credentials.json'):
             pass
         else:
-            scope = ['https://www.googleapis.com/auth/drive']
             CREDENTIALS = st.secrets["CREDENTIALS"]
             with open('credentials.json','w') as file:
                 json.dump(CREDENTIALS,file)
