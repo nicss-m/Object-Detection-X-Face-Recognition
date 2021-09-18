@@ -98,10 +98,10 @@ def services(service):
         scope = ['https://www.googleapis.com/auth/drive']
         if os.path.exists('credentials.json'):
             pass
-        else:
-            CREDENTIALS = st.secrets["CREDENTIALS"]
-            with open('credentials.json','w') as file:
-                json.dump(CREDENTIALS,file)
+        
+        CREDENTIALS = st.secrets["CREDENTIALS"]
+        with open('credentials.json','w') as file:
+            json.dump(CREDENTIALS,file)
         with open('credentials.json','r') as file:
             data = file.read()
         st.write(data)
