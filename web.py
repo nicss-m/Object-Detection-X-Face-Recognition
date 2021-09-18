@@ -200,7 +200,7 @@ def objectDetection(img,net):
     font = cv2.FONT_HERSHEY_PLAIN
 
     # create blob using blobFromImage function in order to feed the data into the neural network(net)
-    blob = cv2.dnn.blobFromImage(imgResize, 1/255, (318, 318), (0,0,0), swapRB = True, crop = False)
+    blob = cv2.dnn.blobFromImage(imgResize, 1/255, (318, 318), (0,0,0), crop = False)
 
     # set the Input from the blob into the network
     net.setInput(blob)
