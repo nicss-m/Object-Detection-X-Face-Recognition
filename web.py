@@ -39,7 +39,7 @@ WEBRTC_CLIENT_SETTINGS = ClientSettings(
     media_stream_constraints={"video": True, "audio": False},
 )
 
-@st.cache(hash_funcs={"_thread.RLock": lambda _: None})
+@st.cache
 def loading():
     # download model and configuration from google drive
     url_yolo = 'https://drive.google.com/uc?id=1qIcb77gXY0_RV2STYA3tc1ASqyfhfQBv'
