@@ -284,7 +284,7 @@ def Home():
     st.write("Source code is available on my github account: . Have Fun Learning!")
     st.write("\n\nTerms & Agreement: Any information uploaded or put in this site by the user is of the user will alone and is not responsibility or concern by the creator of this site. By using the site, you therefore agree with the said Terms & Agreement.")
     st.write("\nNote: No actual image or video is saved in this site. All uploaded files are removed after use")
-    st.write("My Secrets:", st.secrets["CREDENTIALS"])
+    st.write("My Secretss:", st.secrets["CREDENTIALS"])
     
 def getEncodings(images):
 
