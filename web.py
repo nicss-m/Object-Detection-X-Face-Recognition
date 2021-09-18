@@ -64,20 +64,6 @@ def loading():
     # load credentials
 #     load_dotenv()
 #     CREDENTIALS = json.loads(os.environ.get('my_credentials'))
-    CREDENTIALS = st.secrets["CREDENTIALS"]
-    
-    if os.path.exists('credentials.json'):
-        pass
-    else:
-        with open('credentials.json','w') as file:
-            json.dump(CREDENTIALS,file)
-
-    scope = ['https://www.googleapis.com/auth/drive']
-
-    # parsing JSON credentials for a service account:
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
-    # create Service
-    service = build('drive', 'v3', credentials=credentials)
     
     # object detection variables
     object_names = [] # object names storage
@@ -100,11 +86,33 @@ def loading():
     with open(encodings, "rb") as file:
         knownEncodeList = pickle.load(file)
     with open(known_names, "rb") as file:
-        knownNames = pickle.load(file)
+        knownNames = pickle.load(file)  
+    service = None
     
     return colors,object_names,known_names,encodings,knownEncodeList,knownNames,yolo,yolo_config,service
     
 colors,object_names,known_names,encodings,knownEncodeList,knownNames,yolo,yolo_config,service = loading()
+
+def services():
+    
+    if service!=None:
+        pass
+    else:
+        if os.path.exists('credentials.json'):
+            pass
+        else:
+            scope = ['https://www.googleapis.com/auth/drive']
+            CREDENTIALS = st.secrets["CREDENTIALS"]
+            with open('credentials.json','w') as file:
+                json.dump(CREDENTIALS,file)
+
+        # parsing JSON credentials for a service account:
+        credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+        # create Service
+        service = build('drive', 'v3', credentials=credentials)
+    return service
+
+ service = services()
 
 def load_net():
     # create network model using yolov3
