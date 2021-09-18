@@ -99,11 +99,12 @@ def services(service):
         if os.path.exists('credentials.json'):
             pass
         CREDENTIALS = st.secrets["CREDENTIALS"]
+        CREDENTIALS = json.loads(CREDENTIALS)
         st.write(CREDENTIALS)
         with open('credentials.json','w') as file:
             json.dump(CREDENTIALS,file)
-        with open('credentials.json','r') as file:
-            data = file.read()
+#         with open('credentials.json','r') as file:
+#             data = file.read()
         # parsing JSON credentials for a service account:
         credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
         # create Service
