@@ -91,7 +91,7 @@ def loading():
     
 colors,object_names,known_names,encodings,knownEncodeList,knownNames,yolo,yolo_config,service = loading()
 
-def services():
+def services(service):
     
     if service!=None:
         pass
