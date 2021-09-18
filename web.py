@@ -320,20 +320,15 @@ def Learn_Faces():
     
     multi_files = st.file_uploader("Please upload your selfie image/s", 
                         type = ['jpg','png','jpeg'], accept_multiple_files=True)
+    
+    st.uploaded_file_manager.remove_session_files
+    
     st.subheader('For Example:')
     col1, col2 = st.beta_columns(2)
-    
+  
     with open('img_rsc/sample2.jpg', 'rb') as f:
-#         img = np.array(Image.open(f))
-#         imgResize = cv2.resize(img, (380,500))
-#         img = cv2.cvtColor(imgResize, cv2.COLOR_RGB2BGR)
-#         cv2.imwrite('jisoo2.jpg',img)
         col1.image(np.array(Image.open(f)))
     with open('img_rsc/sample1.jpg', 'rb') as f:
-#         img = np.array(Image.open(f))
-#         imgResize = cv2.resize(img, (380,500))
-#         img = cv2.cvtColor(imgResize, cv2.COLOR_RGB2BGR)
-#         cv2.imwrite('lisa2.jpg',img)
         col2.image(np.array(Image.open(f)))
     
     col1.write('Filename: Jisoo.jpg')
