@@ -300,9 +300,9 @@ def getEncodings(images):
 
 def Home():
     st.title("Hello Cutie :)")
-    st.write("\nWelcome to this for fun app that detects objects and recognizes people faces in images, video or real time camera. Hope you have fun!")
-    st.write("Source code is available on my github account: [![Open Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nicss-m/Object-Detection-X-Face-Recognition/tree/master). Have Fun Learning!")
-    st.write("\n\nTerms & Agreement: Any information uploaded or put in this site by the user is of the user will alone and is not responsibility or concern by the creator of this site. By using the site, you therefore agree with the said Terms & Agreement.")
+    st.write("\nWelcome to this for fun web app that detects objects and recognizes people's faces in images, video or real time camera. Enjoy!")
+    st.write("Source code is available on my github account: [![Open Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nicss-m/Object-Detection-X-Face-Recognition/tree/master). Have fun learning!")
+    st.write("\n\nTerms of Service: Any information uploaded in this site by the user is by the user will alone and is not a responsibility or concern by the creator of this site. By using the site, you therefore agree with the said Terms of Service.")
     st.write("\nNote: No actual image or video is saved in this site. All uploaded files are removed after use")
 
 def Learn_Faces():
