@@ -321,8 +321,6 @@ def Learn_Faces():
     multi_files = st.file_uploader("Please upload your selfie image/s", 
                         type = ['jpg','png','jpeg'], accept_multiple_files=True)
     
-    st.uploaded_file_manager.remove_session_files()
-    
     st.subheader('For Example:')
     col1, col2 = st.beta_columns(2)
   
