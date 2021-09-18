@@ -466,14 +466,12 @@ def ObjD_FaceR_Video():
                     break
         stframe.empty()
         with st.spinner('Processing done! Please wait for the result...'):
-            time.sleep(5)
-        
-        # output video
-        cap.release()
-        result.release()
-        st.title("Result")
-        with open(result_temp.name, 'rb') as f:
-            st.video(f)
+            # output video
+            cap.release()
+            result.release()
+            st.title("Result")
+            with open(result_temp.name, 'rb') as f:
+                st.video(f)
 
         
 def  ObjD_FaceR_Cam():
