@@ -60,10 +60,6 @@ def loading():
     gdown.download(url_known_names, known_names, quiet=True)    
     gdown.download(url_encodings, encodings, quiet=True)
     
-    # load credentials
-#     load_dotenv()
-#     CREDENTIALS = json.loads(os.environ.get('my_credentials'))
-    
     # object detection variables
     object_names = [] # object names storage
     colors = None # color storage
@@ -335,7 +331,7 @@ def Learn_Faces():
     images = []
     faceNames = []
     if multi_files != []:
-        with spin.spinner("Processing... Please wait until the end of process."):
+        with spin("Processing... Please wait until the end of process."):
             for file in multi_files:
                 if file is not None:
                     # read image
@@ -380,7 +376,7 @@ def Learn_Faces():
                 media_body=media_content_2
             ).execute()
             
-        with spin.spinner('Processing done! Rerunning the Program...'):
+        with spin('Processing done! Rerunning the Program...'):
             time.sleep(3)
             
         multi_files = []
