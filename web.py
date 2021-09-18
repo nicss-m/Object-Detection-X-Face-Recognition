@@ -321,7 +321,7 @@ def Learn_Faces():
     multi_files = st.file_uploader("Please upload your selfie image/s", 
                         type = ['jpg','png','jpeg'], accept_multiple_files=True)
     
-    spin = st.empty()
+    spin = st.spinner()
     st.subheader('For Example:')
     col1, col2 = st.beta_columns(2)
   
