@@ -64,7 +64,7 @@ def loading():
     # load credentials
 #     load_dotenv()
 #     CREDENTIALS = json.loads(os.environ.get('my_credentials'))
-    CREDENTIALS = st.secrets["my_credentials"]
+    CREDENTIALS = st.secrets["CREDENTIALS"]
     
     if os.path.exists('credentials.json'):
         pass
