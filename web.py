@@ -25,6 +25,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 from googleapiclient.http import MediaFileUpload
 from apiclient.discovery import build
 from dotenv import load_dotenv
+from decouple import config
 
 # set page icon and title
 favicon = Image.open('favicon.ico')
@@ -61,9 +62,10 @@ def loading():
     gdown.download(url_encodings, encodings, quiet=True)
     
     # load credentials
-    load_dotenv()
-    CREDENTIALS = json.loads(os.environ.get('CREDENTIALS'))
-    st.write(CREDENTIALS)
+#     load_dotenv()
+#     CREDENTIALS = json.loads(os.environ.get('CREDENTIALS'))
+    CREDENTIALS = config('CREDENTIALS',default='')
+    
     if os.path.exists('credentials.json'):
         pass
     else:
