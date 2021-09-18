@@ -304,9 +304,6 @@ def getEncodings(images):
     return encodeList
 
 def Home():
-    st.error("Do you really, really, wanna do this?")
-    if st.button("Yes I'm ready to rumble"):
-        run_expensive_function()
     st.title("Hello Cutie :)")
     st.write("\nWelcome to this for fun app that detects objects and recognizes people faces in images, video or real time camera. Hope you have fun!")
     st.write("Source code is available on my github account: . Have Fun Learning!")
@@ -324,6 +321,7 @@ def Learn_Faces():
     multi_files = st.file_uploader("Please upload your selfie image/s", 
                         type = ['jpg','png','jpeg'], accept_multiple_files=True)
     
+    spin = st.empty()
     st.subheader('For Example:')
     col1, col2 = st.beta_columns(2)
   
@@ -337,7 +335,7 @@ def Learn_Faces():
     images = []
     faceNames = []
     if multi_files != []:
-        with st.spinner("Processing... Please wait until the end of process."):
+        with spin.spinner("Processing... Please wait until the end of process."):
             for file in multi_files:
                 if file is not None:
                     # read image
@@ -382,7 +380,7 @@ def Learn_Faces():
                 media_body=media_content_2
             ).execute()
             
-        with st.spinner('Processing done! Rerunning the Program...'):
+        with spin.spinner('Processing done! Rerunning the Program...'):
             time.sleep(3)
             
         multi_files = []
