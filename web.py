@@ -104,7 +104,7 @@ def loading():
     
     return colors,object_names,known_names,encodings,knownEncodeList,knownNames,yolo,yolo_config,service
     
-# colors,object_names,known_names,encodings,knownEncodeList,knownNames,yolo,yolo_config,service = loading()
+colors,object_names,known_names,encodings,knownEncodeList,knownNames,yolo,yolo_config,service = loading()
 
 def load_net():
     # create network model using yolov3
