@@ -110,7 +110,7 @@ def services(service):
         service = build('drive', 'v3', credentials=credentials)
     return service
 
-service = services()
+service = services(service)
 
 def load_net():
     # create network model using yolov3
