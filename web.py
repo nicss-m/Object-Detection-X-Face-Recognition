@@ -98,7 +98,6 @@ def services(service):
         else:
             CREDENTIALS = st.secrets["CREDENTIALS"]
             CREDENTIALS = json.loads(CREDENTIALS)
-            st.write(CREDENTIALS)
             with open('credentials.json','w') as file:
                 json.dump(CREDENTIALS,file)
 
