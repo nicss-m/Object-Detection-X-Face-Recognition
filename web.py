@@ -450,7 +450,7 @@ def ObjD_FaceR_Video():
                     if p_count>0:    
                         # perform face recognition
                         img,_ = faceRecognition(img)
-                    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+                    # img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
                     
                     stframe.image(img)
 
