@@ -120,8 +120,8 @@ def faceRecognition(images):
         imgResize = cv2.resize(images, (0,0), None, 0.25,0.25)
         
         # convert image to RGB
-        imgRGB = cv2.cvtColor(imgResize, cv2.COLOR_BGR2RGB)
-        
+#         imgRGB = cv2.cvtColor(imgResize, cv2.COLOR_BGR2RGB)
+        imgRGB = imgResize
         # extract face locations on each frame and generate encodes of the current faces in the frame
         # it will be use for comparing new faces with the trained faces 
         facesCurFrame = fr.face_locations(imgRGB)
@@ -450,7 +450,7 @@ def ObjD_FaceR_Video():
                     if p_count>0:    
                         # perform face recognition
                         img,_ = faceRecognition(img)
-                    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+                    # img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
                     
                     stframe.image(img)
 
