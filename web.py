@@ -301,7 +301,7 @@ def getEncodings(images):
 def Home():
     st.title("Hello Cutie :)")
     st.write("\nWelcome to this for fun app that detects objects and recognizes people faces in images, video or real time camera. Hope you have fun!")
-    st.write("Source code is available on my github account: . Have Fun Learning!")
+    st.write("Source code is available on my github account: [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/nicss-m/object-detection-x-face-recognition/web.py). Have Fun Learning!")
     st.write("\n\nTerms & Agreement: Any information uploaded or put in this site by the user is of the user will alone and is not responsibility or concern by the creator of this site. By using the site, you therefore agree with the said Terms & Agreement.")
     st.write("\nNote: No actual image or video is saved in this site. All uploaded files are removed after use")
 
