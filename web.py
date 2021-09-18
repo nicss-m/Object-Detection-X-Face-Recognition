@@ -40,7 +40,7 @@ WEBRTC_CLIENT_SETTINGS = ClientSettings(
     media_stream_constraints={"video": True, "audio": False},
 )
 
-@st.cache(hash_funcs={"_thread.RLock": lambda _: None})
+@st.cache
 def loading():
     # download model and configuration from google drive
     url_yolo = 'https://drive.google.com/uc?id=1qIcb77gXY0_RV2STYA3tc1ASqyfhfQBv'
@@ -104,7 +104,7 @@ def loading():
     
     return colors,object_names,known_names,encodings,knownEncodeList,knownNames,yolo,yolo_config,service
     
-colors,object_names,known_names,encodings,knownEncodeList,knownNames,yolo,yolo_config,service = loading()
+# colors,object_names,known_names,encodings,knownEncodeList,knownNames,yolo,yolo_config,service = loading()
 
 def load_net():
     # create network model using yolov3
