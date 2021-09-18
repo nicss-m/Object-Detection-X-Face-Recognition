@@ -98,13 +98,13 @@ def services(service):
         scope = ['https://www.googleapis.com/auth/drive']
         if os.path.exists('credentials.json'):
             pass
-        CREDENTIALS = st.secrets["CREDENTIALS"]
-        CREDENTIALS = json.loads(CREDENTIALS)
-        st.write(CREDENTIALS)
-        with open('credentials.json','w') as file:
-            json.dump(CREDENTIALS,file)
-#         with open('credentials.json','r') as file:
-#             data = file.read()
+        else:
+            CREDENTIALS = st.secrets["CREDENTIALS"]
+            CREDENTIALS = json.loads(CREDENTIALS)
+            st.write(CREDENTIALS)
+            with open('credentials.json','w') as file:
+                json.dump(CREDENTIALS,file)
+
         # parsing JSON credentials for a service account:
         credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
         # create Service
@@ -285,13 +285,6 @@ def objectDetection(img,net):
             
     return img,label_s,confidence_s, p_count
 
-def Home():
-    st.title("Hello Cutie :)")
-    st.write("\nWelcome to this for fun app that detects objects and recognizes people faces in images, video or real time camera. Hope you have fun!")
-    st.write("Source code is available on my github account: . Have Fun Learning!")
-    st.write("\n\nTerms & Agreement: Any information uploaded or put in this site by the user is of the user will alone and is not responsibility or concern by the creator of this site. By using the site, you therefore agree with the said Terms & Agreement.")
-    st.write("\nNote: No actual image or video is saved in this site. All uploaded files are removed after use")
-    
 def getEncodings(images):
 
     encodeList = [] # encodes temp storage
@@ -308,6 +301,13 @@ def getEncodings(images):
 
     # return encodings
     return encodeList
+
+def Home():
+    st.title("Hello Cutie :)")
+    st.write("\nWelcome to this for fun app that detects objects and recognizes people faces in images, video or real time camera. Hope you have fun!")
+    st.write("Source code is available on my github account: . Have Fun Learning!")
+    st.write("\n\nTerms & Agreement: Any information uploaded or put in this site by the user is of the user will alone and is not responsibility or concern by the creator of this site. By using the site, you therefore agree with the said Terms & Agreement.")
+    st.write("\nNote: No actual image or video is saved in this site. All uploaded files are removed after use")
 
 def Learn_Faces():
     
