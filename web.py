@@ -304,6 +304,9 @@ def getEncodings(images):
     return encodeList
 
 def Home():
+    st.error("Do you really, really, wanna do this?")
+    if st.button("Yes I'm ready to rumble"):
+        run_expensive_function()
     st.title("Hello Cutie :)")
     st.write("\nWelcome to this for fun app that detects objects and recognizes people faces in images, video or real time camera. Hope you have fun!")
     st.write("Source code is available on my github account: . Have Fun Learning!")
