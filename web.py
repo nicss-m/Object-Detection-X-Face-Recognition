@@ -312,12 +312,11 @@ def Learn_Faces():
     file_id_encodings = "1qJ2qpouZRemHWiAbsH7P7EXHhpzgk0yt"
     
     st.title('Learn New Faces')
-    st.write('Not yet known? Upload your own image (selfie) with the filename as your name or the name of the person in the image.')
+    st.write('Not yet known? Upload your own image (one person per image only) with the filename as your name or the name of the person in the image.')
     
     multi_files = st.file_uploader("Please upload your selfie image/s", 
                         type = ['jpg','png','jpeg'], accept_multiple_files=True)
     
-    spin = st.spinner()
     st.subheader('For Example:')
     col1, col2 = st.beta_columns(2)
   
@@ -331,7 +330,7 @@ def Learn_Faces():
     images = []
     faceNames = []
     if multi_files != []:
-        with spin("Processing... Please wait until the end of process."):
+        with st.spinner("Processing... Please wait until the end of process."):
             for file in multi_files:
                 if file is not None:
                     # read image
@@ -376,7 +375,7 @@ def Learn_Faces():
                 media_body=media_content_2
             ).execute()
             
-        with spin('Processing done! Rerunning the Program...'):
+        with st.spinner('Processing done! Rerunning the Program...'):
             time.sleep(3)
             
         multi_files = []
