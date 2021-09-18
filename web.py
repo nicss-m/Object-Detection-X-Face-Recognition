@@ -24,8 +24,6 @@ import av
 from oauth2client.service_account import ServiceAccountCredentials
 from googleapiclient.http import MediaFileUpload
 from apiclient.discovery import build
-from dotenv import load_dotenv
-from decouple import config
 
 # set page icon and title
 favicon = Image.open('favicon.ico')
