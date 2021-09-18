@@ -325,8 +325,8 @@ def Learn_Faces():
     with open('img_rsc/sample1.jpg', 'rb') as f:
         col2.image(np.array(Image.open(f)))
     
-    col1.write('Filename: Jisoo.jpg')
-    col2.write('Filename: Lisa.jpg')
+    col1.write('Filename: Lalisa.jpg')
+    col2.write('Filename: Han So Hee.jpg')
     images = []
     faceNames = []
     if multi_files != []:
