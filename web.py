@@ -92,7 +92,6 @@ def loading():
 colors,object_names,known_names,encodings,knownEncodeList,knownNames,yolo,yolo_config,service = loading()
 
 def services(service):
-    
     if service!=None:
         pass
     else:
@@ -103,7 +102,7 @@ def services(service):
             CREDENTIALS = st.secrets["CREDENTIALS"]
             with open('credentials.json','w') as file:
                 json.dump(CREDENTIALS,file)
-
+        st.write(CREDENTIALS)
         # parsing JSON credentials for a service account:
         credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
         # create Service
