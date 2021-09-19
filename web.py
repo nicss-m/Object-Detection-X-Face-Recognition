@@ -429,7 +429,7 @@ def ObjD_FaceR_Video():
         frame_width = int(cap.get(3))
         frame_height = int(cap.get(4))
         size = (frame_width, frame_height) 
-        result = cv2.VideoWriter(result_temp.name, cv2.VideoWriter_fourcc(*'VP90'), 24, size)
+        result = cv2.VideoWriter(result_temp.name, cv2.VideoWriter_fourcc(*'VP90'), 20, size)
         
         with st.spinner("Processing... Please wait until the end of process."):
             # progress bar
@@ -451,10 +451,11 @@ def ObjD_FaceR_Video():
                     if p_count>0:    
                         # perform face recognition
                         img,_ = faceRecognition(img)
-                    # img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+                    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
                     
                     stframe.image(img)
-
+                    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+                    
                     # saving video frames
                     result.write(img)
 
@@ -466,7 +467,7 @@ def ObjD_FaceR_Video():
                     bar.empty()
                     break
         stframe.empty()
-        with st.spinner('Processing done! Please wait for the result...'):
+        with st.spinner('Processing done! Please wait for the result. This may take a while...'):
             # output video
             cap.release()
             result.release()
@@ -478,7 +479,6 @@ def ObjD_FaceR_Video():
             st.title("Result")
             with open("video_result.mp4", 'rb') as f:
                 st.video(f)
-
         
 def  ObjD_FaceR_Cam():
     net = load_net()
