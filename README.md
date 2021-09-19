@@ -3,7 +3,7 @@
 <h4>Sample Outputs of the program is given below:</h4>
   <img src="https://github.com/nicss-m/Object-Detection-X-Face-Recognition/blob/master/img_rsc/sample1_detect.jpeg?raw=true" alt="404" width="1200"/>
 <p float="left">
-  <img src="https://github.com/nicss-m/Object-Detection-X-Face-Recognition/blob/master/img_rsc/sample2_detect.jpeg?raw=true" alt="404" width="600"/>
-  <img src="https://github.com/nicss-m/Object-Detection-X-Face-Recognition/blob/master/img_rsc/sample3_detect.jpeg?raw=true" alt="404" width="600"/>
+  <img src="https://github.com/nicss-m/Object-Detection-X-Face-Recognition/blob/master/img_rsc/sample2_detect.jpeg?raw=true" alt="404" width="500"/>
+  <img src="https://github.com/nicss-m/Object-Detection-X-Face-Recognition/blob/master/img_rsc/sample3_detect.jpeg?raw=true" alt="404" width="500"/>
 </p>
 
