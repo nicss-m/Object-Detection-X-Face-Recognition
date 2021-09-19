@@ -40,9 +40,6 @@ WEBRTC_CLIENT_SETTINGS = ClientSettings(
     media_stream_constraints={"video": True, "audio": False},
 )
 
-[server]
-maxUploadSize=30
-
 @st.cache
 def loading():
     # download model and configuration from google drive
