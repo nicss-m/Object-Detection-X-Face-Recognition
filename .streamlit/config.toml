@@ -1,0 +1,4 @@
+[server]
+
+# set upload size
+maxUploadSize=30
