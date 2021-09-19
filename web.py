@@ -1,5 +1,6 @@
 # import modules
 import face_recognition as fr
+import moviepy.editor as mp
 from math import floor
 import numpy as np
 import pickle
@@ -428,7 +429,7 @@ def ObjD_FaceR_Video():
         frame_width = int(cap.get(3))
         frame_height = int(cap.get(4))
         size = (frame_width, frame_height) 
-        result = cv2.VideoWriter(result_temp.name, cv2.VideoWriter_fourcc(*'VP90'), 20, size)
+        result = cv2.VideoWriter(result_temp.name, cv2.VideoWriter_fourcc(*'VP90'), 24, size)
         
         with st.spinner("Processing... Please wait until the end of process."):
             # progress bar
@@ -469,8 +470,13 @@ def ObjD_FaceR_Video():
             # output video
             cap.release()
             result.release()
+
+            vid_detect = mp.VideoFileClip(result_temp.name)
+            vid_with_audio = vid_detect.set_audio(mp.AudioFileClip(temp.name))
+            vid_with_audio.write_videofile("video_result.mp4") 
+            
             st.title("Result")
-            with open(result_temp.name, 'rb') as f:
+            with open("video_result.mp4", 'rb') as f:
                 st.video(f)
 
         
