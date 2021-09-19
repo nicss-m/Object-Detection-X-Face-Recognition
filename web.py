@@ -119,10 +119,8 @@ def faceRecognition(images):
         
         # resize image to increase running time, producing .25 -> 1/4 scale
         imgResize = cv2.resize(images, (0,0), None, 0.25,0.25)
-        
-        # convert image to RGB
-#         imgRGB = cv2.cvtColor(imgResize, cv2.COLOR_BGR2RGB)
         imgRGB = imgResize
+  
         # extract face locations on each frame and generate encodes of the current faces in the frame
         # it will be use for comparing new faces with the trained faces 
         facesCurFrame = fr.face_locations(imgRGB)
@@ -426,10 +424,10 @@ def ObjD_FaceR_Video():
         # for video result
         result_temp = tempfile.NamedTemporaryFile(delete=False, suffix='.webm')
 
-        frame_width = int(cap.get(3))
-        frame_height = int(cap.get(4))
-        size = (frame_width, frame_height) 
-        result = cv2.VideoWriter(result_temp.name, cv2.VideoWriter_fourcc(*'VP90'), 20, size)
+        frame_width,frame_height = int(cap.get(3)),int(cap.get(4))
+        size = (frame_width, frame_height)
+        fps = cap.get(cv2.CAP_PROP_FPS)
+        result = cv2.VideoWriter(result_temp.name, cv2.VideoWriter_fourcc(*'VP90'), fps, size)
         
         with st.spinner("Processing... Please wait until the end of process."):
             # progress bar
@@ -453,6 +451,7 @@ def ObjD_FaceR_Video():
                         img,_ = faceRecognition(img)
                     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
                     
+                    # view image
                     stframe.image(img)
                     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
                     
