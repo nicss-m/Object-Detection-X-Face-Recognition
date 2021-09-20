@@ -520,11 +520,9 @@ def  ObjD_FaceR_Cam():
             self.result_queue.put(result)
             return output_img
                 
-    webrtc_ctx = webrtc_streamer(key="example", mode=WebRtcMode.SENDRECV,
+    webrtc_ctx = webrtc_streamer(key="objdec-facerec", mode=WebRtcMode.SENDRECV,
                                  client_settings=WEBRTC_CLIENT_SETTINGS,
                                  video_transformer_factory=VideoTransformer,
-                                 rtc_configuration=RTC_CONFIGURATION,
-                                 video_processor_factory=MobileNetSSDVideoProcessor,
                                  async_transform=True)
     
     if st.checkbox('Show detected labels', value = True):
