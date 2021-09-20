@@ -306,8 +306,8 @@ def Home():
 
 def Learn_Faces():
     
-    file_id_names = "1rqVL7qTdlM5R6fh65Es4ZsaXAuAWx7KS"
-    file_id_encodings = "1qJ2qpouZRemHWiAbsH7P7EXHhpzgk0yt"
+    file_id_names = "1DBhRpZpOTSWWPdzPDJMi4HXdmNvDf_R1"
+    file_id_encodings = "1m8bRgv-A3ilNn86WajNOkXq7XFB_yyC2"
     
     st.title('Learn New Faces')
     st.write('Not yet known? Upload your own image (one person per image only) with the filename as your name or the name of the person in the image.')
