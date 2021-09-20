@@ -54,8 +54,8 @@ def loading():
     gdown.download(url_coco_names, coco_names, quiet=True)
     
     # download pretrained encodings
-    url_known_names = 'https://drive.google.com/uc?id=1rqVL7qTdlM5R6fh65Es4ZsaXAuAWx7KS'
-    url_encodings = 'https://drive.google.com/uc?id=1qJ2qpouZRemHWiAbsH7P7EXHhpzgk0yt'
+    url_known_names = 'https://drive.google.com/uc?id=1DBhRpZpOTSWWPdzPDJMi4HXdmNvDf_R1'
+    url_encodings = 'https://drive.google.com/uc?id=1m8bRgv-A3ilNn86WajNOkXq7XFB_yyC2'
     known_names = 'knownNames.txt'
     encodings = 'knownFaces.txt'    
     gdown.download(url_known_names, known_names, quiet=True)    
