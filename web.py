@@ -521,7 +521,11 @@ def  ObjD_FaceR_Cam():
             return output_img
                 
     webrtc_ctx = webrtc_streamer(key="example", mode=WebRtcMode.SENDRECV,
-                        client_settings=WEBRTC_CLIENT_SETTINGS,video_transformer_factory=VideoTransformer,async_transform=True)
+                                 client_settings=WEBRTC_CLIENT_SETTINGS,
+                                 video_transformer_factory=VideoTransformer,
+                                 rtc_configuration=RTC_CONFIGURATION,
+                                 video_processor_factory=MobileNetSSDVideoProcessor,
+                                 async_transform=True)
     
     if st.checkbox('Show detected labels', value = True):
         if webrtc_ctx.state.playing:
@@ -529,7 +533,7 @@ def  ObjD_FaceR_Cam():
             while True:
                 if webrtc_ctx.video_processor:
                     try:
-                        result = webrtc_ctx.video_processor.result_queue.get(timeout=1.0)
+                        result = webrtc_ctx.video_processor.result_queue.get(timeout=3.0)
                     except queue.Empty:
                         result = None
                     labels_placeholder.table(result)
