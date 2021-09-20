@@ -531,7 +531,7 @@ def  ObjD_FaceR_Cam():
             while True:
                 if webrtc_ctx.video_processor:
                     try:
-                        result = webrtc_ctx.video_processor.result_queue.get(timeout=3.0)
+                        result = webrtc_ctx.video_processor.result_queue.get(timeout=1.0)
                     except queue.Empty:
                         result = None
                     labels_placeholder.table(result)
